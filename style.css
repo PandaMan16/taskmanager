@@ -3,32 +3,96 @@ body{
     margin: 10px 10px;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     background-color: #202629;
     font-family: "Poppins", sans-serif;
     color: white;
-    gap: 10px
+    gap: 10px;
+    align-items: center;
 }
-body > div,body > div > *{
+.tasklist{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 25px;
+}
+.task{
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    width: 200px;
+    height: 300px;
 }
-body > div{
-    min-width: 200px;
-    min-height: 300px;
-    background-color: rgba(255,255,255,0.5);
-    border: white 1px solid;
-    border-radius: 25px;
-    backdrop-filter: blur(15px);
+.task h3{
+    margin-top: 0;
     text-align: center;
-    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.info{
+.task .dateI {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.5em;
+    color: gray;
+}
+.task form{
+    position: absolute;
+    bottom: 30px;
+    width: 180px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
 }
-.status,.limit{
+.task .dateL {
     position: relative;
-    width: 50%;
+    width: 100%;
+    text-align: center;
+}
+.task .dateL::before{
+    content: "Date Limit";
+    font-size: 1em;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: -1.5em;
+    left: 0;
+}
+.task .dateL::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+.desc {
+    position: relative;
+}
+.task .desc::before{
+    content: "Description";
+    font-size: 1em;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: -1.5em;
+    left: 0;
+    text-align: center;
+}
+.task .desc::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
 }
